@@ -1,16 +1,21 @@
-## Hi there 👋
+# HamGroup
 
-<!--
-**HamGroup/HamGroup** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Welcome to the official GitHub profile of HamGroup! 🚀
 
-Here are some ideas to get you started:
+## About Us
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+HamGroup is a collaborative community dedicated to creative and fun projects.
+
+## Projects
+
+Here's a list of some of our key projects:
+
+1. **HamWeb** - HamWeb is the future of the internet and a .
+2. **HamAI** - An Inactive project that is training at the moment.(we got it to 2.5b)
+3. **HamEngine** - An inactive project that is being developed at the moment.
+
+Feel free to explore our repositories to find more exciting projects!
+
+## Contact Us
+
+If you have any questions, feel free to reach out to us at 1ham.group1@gmail.com.
