@@ -63,7 +63,7 @@
 </head>
 <body>
     <header>
-        <img id="logo" src="Logo.jpg" alt="HamGroup Logo">
+        <img id="logo" src="logo.png" alt="HamGroup Logo">
         <h1>HamGroup</h1>
         <nav>
             <a href="#">Home</a>
@@ -76,21 +76,29 @@
     </main>
     <script>
         async function fetchRepositories() {
+            const token = '';
             try {
-                const response = await fetch('https://api.github.com/orgs/HamGroup/HamGroup');
+                const response = await fetch('https://api.github.com/orgs/HamGroup/repos', {
+                    headers: {
+                        'Authorization': `token ${token}`
+                    }
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const repos = await response.json();
                 const container = document.getElementById('updates-container');
-                
+
                 repos.forEach(repo => {
                     const updateBox = document.createElement('div');
                     updateBox.classList.add('update-box');
-                    
+
                     const repoName = document.createElement('h3');
                     repoName.textContent = repo.name;
-                    
+
                     const repoDescription = document.createElement('p');
                     repoDescription.textContent = repo.description || 'No description available.';
-                    
+
                     const repoLink = document.createElement('a');
                     repoLink.href = repo.html_url;
                     repoLink.textContent = 'View Repository';
