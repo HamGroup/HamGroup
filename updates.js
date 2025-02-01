@@ -25,8 +25,6 @@ const updates = [
         </ul>
         `
     },
-];
-},
     {
         title: "HamWeb",
         content: `
