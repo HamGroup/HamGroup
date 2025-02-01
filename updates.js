@@ -28,14 +28,11 @@ const updates = [
     {
         title: "HamWeb",
         content: `
-        <h1>HamWeb</h1>
+        <h1>Updates: Raymon92 joined the group  </h1>
+       
+    
         <p>Created HamWeb, the future of the internet.</p>
-        <ul>
-            <li>Created HamWeb.(<a href="http://192.168.1.197/HamWeb.zip">Download HamWeb</a>)</li>
-            <li>Added the HamWeb Server.</li>
-            <li>Added the <a href="http://192.168.1.197/en-US/sites.txt">HamPage list</a>.</li>
-            <li>Added <a href="http://192.168.1.197/Dev/Guide.txt">Dev/Guide</a>.</li>
-        </ul>
+        
         `
     },
 ];
