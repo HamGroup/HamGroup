@@ -31,7 +31,7 @@ const updates = [
         <h1>Updates: Raymon92 joined the group  </h1>
        
     
-        <p>Created HamWeb, the future of the internet.</p>
+        <p>He understand python</p>
         
         `
     },
