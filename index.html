@@ -1,49 +1,289 @@
-<nav class="bg-primary py-4 px-8 flex justify-between items-center">
-    <div>
-      <img src="https://placehold.co/150x50" alt="Tehran Motors Logo" />
-    </div>
-    <ul class="flex space-x-4">
-      <li><a href="#" class="text-primary-foreground hover:text-primary-dark">Welcome</a></li>
-      <li><a href="#" class="text-primary-foreground hover:text-primary-dark">Featured Cars</a></li>
-      <li><a href="#" class="text-primary-foreground hover:text-primary-dark">Contact Us</a></li>
-    </ul>
-  </nav>
-  <section class="bg-cover bg-center h-screen flex items-center" style="background-image: url('https://placehold.co/1920x1080');">
-    <div class="p-8 text-center">
-      <h2 class="text-4xl font-bold text-primary-foreground">Welcome to Tehran Motors</h2>
-      <p class="text-lg text-primary-foreground mt-4">Explore our wide range of vehicles and find your perfect match.</p>
-    </div>
-  </section>
-  <section class="py-16 px-8">
-    <h2 class="text-2xl font-bold text-primary-foreground mb-8">Featured Cars</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-card p-4 rounded-lg">
-        <img src="https://placehold.co/400x250" alt="Featured Car 1" class="w-full h-48 object-cover rounded-lg mb-4" />
-        <h3 class="text-lg font-bold text-primary-foreground">Car Model 1</h3>
-        <p class="text-sm text-muted-foreground mt-2">Starting from $XX,XXX</p>
-      </div>
-  
-      <div class="bg-card p-4 rounded-lg">
-        <img src="https://placehold.co/400x250" alt="Featured Car 2" class="w-full h-48 object-cover rounded-lg mb-4" />
-        <h3 class="text-lg font-bold text-primary-foreground">Car Model 2</h3>
-        <p class="text-sm text-muted-foreground mt-2">Starting from $XX,XXX</p>
-      </div>
-  
-      <div class="bg-card p-4 rounded-lg">
-        <img src="https://placehold.co/400x250" alt="Featured Car 3" class="w-full h-48 object-cover rounded-lg mb-4" />
-        <h3 class="text-lg font-bold text-primary-foreground">Car Model 3</h3>
-        <p class="text-sm text-muted-foreground mt-2">Starting from $XX,XXX</p>
-      </div>
-    </div>
-  </section>
-  <section class="py-16 px-8"></section>
-  <section class="bg-primary py-16 px-8 flex items-center justify-between">
-    <div class="text-left">
-      <h2 class="text-2xl font-bold text-primary-foreground mb-8">Contact Us</h2>
-      <p class="text-lg text-primary-foreground">Have a question or want to schedule a test drive? Reach out to us!</p>
-    </div>
-    <button class="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg">Contact Now</button>
-  </section>
-  <footer class="bg-primary py-4 px-8 text-center text-primary-foreground">
-    <p>&copy; 2023 Tehran Motors. All Rights Reserved.</p>
-  </footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehran Motors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav.bg-primary {
+            background-color: #2c3e50; /* Change to your primary color */
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            height: 50px; /* Adjust to fit your logo */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #ecf0f1; /* Change to your primary-foreground color */
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: #bdc3c7; /* Change to your primary-dark color */
+        }
+
+        section.bg-cover {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ecf0f1; /* Change to your primary-foreground color */
+        }
+
+        section.bg-cover h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        section.bg-cover p {
+            font-size: 1.25rem;
+        }
+
+        section.py-16 {
+            padding: 4rem 2rem;
+        }
+
+        section h2 {
+            color: #2c3e50; /* Change to your primary-foreground color */
+            margin-bottom: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: 1fr;
+        }
+
+        .md\\:grid-cols-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .lg\\:grid-cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .bg-card {
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .bg-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        .bg-primary {
+            background-color: #2c3e50; /* Change to your primary color */
+            color: #ecf0f1; /* Change to your primary-foreground color */
+        }
+
+        .bg-secondary {
+            background-color: #34495e; /* Change to your secondary color */
+            color: #ecf0f1; /* Change to your secondary-foreground color */
+        }
+
+        .bg-secondary:hover {
+            background-color: #2c3e50; /* Change to a darker secondary color */
+        }
+
+        .text-primary-foreground {
+            color: #ecf0f1; /* Change to your primary-foreground color */
+        }
+
+        .text-muted-foreground {
+            color: #bdc3c7; /* Change to a muted foreground color */
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .text-4xl {
+            font-size: 2.25rem;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .p-8 {
+            padding: 2rem;
+        }
+
+        .py-4 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .py-16 {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .h-48 {
+            height: 12rem;
+        }
+
+        .object-cover {
+            object-fit: cover;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            background-color: #2c3e50; /* Change to your primary color */
+            color: #ecf0f1; /* Change to your primary-foreground color */
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-primary py-4 px-8 flex justify-between items-center">
+        <div>
+            <img src="https://placehold.co/150x50" alt="Tehran Motors Logo" />
+        </div>
+        <ul class="flex space-x-4">
+            <li><a href="#" class="text-primary-foreground hover:text-primary-dark">Welcome</a></li>
+            <li><a href="#" class="text-primary-foreground hover:text-primary-dark">Featured Cars</a></li>
+            <li><a href="#" class="text-primary-foreground hover:text-primary-dark">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section class="bg-cover bg-center h-screen flex items-center" style="background-image: url('https://placehold.co/1920x1080');">
+        <div class="p-8 text-center">
+            <h2 class="text-4xl font-bold text-primary-foreground">Welcome to Tehran Motors</h2>
+            <p class="text-lg text-primary-foreground mt-4">Explore our wide range of vehicles and find your perfect match.</p>
+        </div>
+    </section>
+    <section class="py-16 px-8">
+        <h2 class="text-2xl font-bold text-primary-foreground mb-8">Featured Cars</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-card p-4 rounded-lg">
+                <img src="https://placehold.co/400x250" alt="Featured Car 1" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <h3 class="text-lg font-bold text-primary-foreground">Car Model 1</h3>
+                <p class="text-sm text-muted-foreground mt-2">Starting from $XX,XXX</p>
+            </div>
+            <div class="bg-card p-4 rounded-lg">
+                <img src="https://placehold.co/400x250" alt="Featured Car 2" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <h3 class="text-lg font-bold text-primary-foreground">Car Model 2</h3>
+                <p class="text-sm text-muted-foreground mt-2">Starting from $XX,XXX</p>
+            </div>
+            <div class="bg-card p-4 rounded-lg">
+                <img src="https://placehold.co/400x250" alt="Featured Car 3" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <h3 class="text-lg font-bold text-primary-foreground">Car Model 3</h3>
+                <p class="text-sm text-muted-foreground mt-2">Starting from $XX,XXX</p>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 px-8"></section>
+    <section class="bg-primary py-16 px-8 flex items-center justify-between">
+        <div class="text-left">
+            <h2 class="text-2xl font-bold text-primary-foreground mb-8">Contact Us</h2>
+            <p class="text-lg text-primary-foreground">Have a question or want to schedule a test drive? Reach out to us!</p>
+        </div>
+        <button class="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg">Contact Now</button>
+    </section>
+        <footer class="bg-primary py-4 px-8 text-center text-primary-foreground">
+        <p>&copy; 2025 Tehran Motors. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
