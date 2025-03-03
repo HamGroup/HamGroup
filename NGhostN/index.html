@@ -6,11 +6,18 @@
     <title>NGhostN</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Minecraft', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #1a1a1a;
             color: #eee;
+        }
+
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('MinecraftRegular-Bmg3.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
         }
 
         .container {
@@ -19,17 +26,24 @@
             overflow: hidden;
         }
 
-        gradient-title {
-            background: linear-gradient(to right, green, brown);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        header img {
+            height: 60px;
+            margin-right: 20px;
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5em;
-            color: #00cc99;
+            background: linear-gradient(to right, green, brown);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
 
         .welcome {
@@ -56,9 +70,9 @@
         }
 
         .server-container {
-            display: inline-block; /* Display containers in a row */
-            text-align: center; /* Center the button and status */
-            margin: 20px; /* Add margin between containers */
+            display: inline-block;
+            text-align: center;
+            margin: 20px;
         }
 
         .server-button {
@@ -91,25 +105,13 @@
             background-color: #222;
             font-size: 0.8em;
         }
-
-        .status {
-            margin-top: 5px;
-            font-size: 0.9em;
-        }
-
-        .status.active {
-            color: green;
-        }
-
-        .status.closed {
-            color: red;
-        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="container">
+            <img src="logo.png" alt="NGhostN Logo">
             <h1>NGhostN Publishers</h1>
         </div>
     </header>
@@ -142,7 +144,7 @@
     <footer>
         <div class="container">
             <p>Made by: HamGroup</p>
-            <p>&copy; 2024 NGhostN Publishers. All Rights Not Reserved.</p>
+            <p>&copy; 2024 NGhostN Publishers and HamGroup. All Rights Not Reserved.</p>
         </div>
     </footer>
 
@@ -154,35 +156,6 @@
                 console.error('Could not copy text: ', err);
             });
         }
-
-        function fetchServerStatus() {
-            fetch('https://Hamgroup.github.io/NGhostN/Status.txt')
-                .then(response => response.text())
-                .then(data => {
-                    const statuses = data.split('\n').map(status => status.trim());
-                    if (statuses[0] === '1') {
-                        document.getElementById('creative-status').textContent = 'Status: Active';
-                        document.getElementById('creative-status').classList.add('active');
-                    } else {
-                        document.getElementById('creative-status').textContent = 'Status: Closed';
-                        document.getElementById('creative-status').classList.add('closed');
-                    }
-                    if (statuses[1] === '1') {
-                        document.getElementById('survival-status').textContent = 'Status: Active';
-                        document.getElementById('survival-status').classList.add('active');
-                    } else {
-                        document.getElementById('survival-status').textContent = 'Status: Closed';
-                        document.getElementById('survival-status').classList.add('closed');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching server status:', error);
-                    document.getElementById('creative-status').textContent = 'Status: Unknown';
-                    document.getElementById('survival-status').textContent = 'Status: Unknown';
-                });
-        }
-
-        fetchServerStatus();
     </script>
 </body>
 </html>
