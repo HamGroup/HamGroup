@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGhostN</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #eee;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        gradient-title {
+            background: linear-gradient(to right, green, brown);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #00cc99;
+        }
+
+        .welcome {
+            position: relative;
+            text-align: center;
+            padding: 100px 0;
+            background-image: url('download.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .welcome .about-box {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            width: 60%;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        .servers {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .server-container {
+            display: inline-block; /* Display containers in a row */
+            text-align: center; /* Center the button and status */
+            margin: 20px; /* Add margin between containers */
+        }
+
+        .server-button {
+            padding: 20px 40px;
+            border: none;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .server-button:hover {
+            transform: translateY(-5px);
+        }
+
+        #creative-server {
+            background-image: url('img.jpg');
+        }
+
+        #survival-server {
+            background-image: url('img.jpg');
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #222;
+            font-size: 0.8em;
+        }
+
+        .status {
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+
+        .status.active {
+            color: green;
+        }
+
+        .status.closed {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>NGhostN Publishers</h1>
+        </div>
+    </header>
+
+    <section class="welcome">
+        <div class="container">
+            <h2>Welcome to NGhostN!</h2>
+            <div class="about-box">
+                <p>Welcome to NGhostN, your ultimate destination for immersive Minecraft server experiences.</p>
+                <p>We Offer a wide range of services:</p>
+                <p>- Fun SMP's</p>
+                <p>- 24/6 online services</p>
+                <p>- All for FREE!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="servers">
+        <div class="container">
+            <h2>Our Servers</h2>
+            <div class="server-container">
+                <button class="server-button" id="creative-server" onclick="copyText('NGhostN.aternos.com')">Creative Server</button>
+                <p class="status" id="creative-status"></p>
+            </div>
+            <div class="server-container">
+                <button class="server-button" id="survival-server" onclick="copyText('NGhostN-SMPS.aternos.com')">Survival Server</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Made by: HamGroup</p>
+            <p>&copy; 2024 NGhostN Publishers. All Rights Not Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Server address copied to clipboard!");
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+
+        function fetchServerStatus() {
+            fetch('https://Hamgroup.github.io/NGhostN/Status.txt')
+                .then(response => response.text())
+                .then(data => {
+                    const statuses = data.split('\n').map(status => status.trim());
+                    if (statuses[0] === '1') {
+                        document.getElementById('creative-status').textContent = 'Status: Active';
+                        document.getElementById('creative-status').classList.add('active');
+                    } else {
+                        document.getElementById('creative-status').textContent = 'Status: Closed';
+                        document.getElementById('creative-status').classList.add('closed');
+                    }
+                    if (statuses[1] === '1') {
+                        document.getElementById('survival-status').textContent = 'Status: Active';
+                        document.getElementById('survival-status').classList.add('active');
+                    } else {
+                        document.getElementById('survival-status').textContent = 'Status: Closed';
+                        document.getElementById('survival-status').classList.add('closed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching server status:', error);
+                    document.getElementById('creative-status').textContent = 'Status: Unknown';
+                    document.getElementById('survival-status').textContent = 'Status: Unknown';
+                });
+        }
+
+        fetchServerStatus();
+    </script>
+</body>
+</html>
